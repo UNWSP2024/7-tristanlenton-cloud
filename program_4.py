@@ -1,10 +1,13 @@
-# Program #4: Coordinates
-# Write a distance function that will take two 3-dimensional coordinates (as input) 
-# and will return (as output) the distance between those points in space.  
-# The 3-dimensional coordinates must be stored as tuples.
+import math
 
-# Now write a mainline that has the user enter the two tuples.  
-# The mainline calls the distance function and stores the distance in a variable.  The mainline then displays the distance.  
-# Also include exception handling to deal with faulty input.
-# The distance between two points (x1,y1,z1) and (x2, y2, z2) is 
-#    given by:   sqrt ((x2-x1)^2 + (y2 - y1)^2 + (z1 - z2)^2) 
+
+def distance (cord1, cord2):
+    total = math.sqrt((cord2(0) - cord1(0)) ^ 2 + (cord2(1) - cord1(1)) ^ 2 + (cord2(2) - cord1(2)) ^ 2)
+    return total
+try:
+    cord1 = (int(input("Cordinate x: ")), int(input("Cordinate y: ")), int(input("Cordinate z: ")))
+    cord2 = (int(input("Cordinate x: ")), int(input("Cordinate y: ")), int(input("Cordinate z: ")))
+    distance = distance(cord1, cord2)
+    print(distance)
+except ValueError:
+    print("Invalid input")
